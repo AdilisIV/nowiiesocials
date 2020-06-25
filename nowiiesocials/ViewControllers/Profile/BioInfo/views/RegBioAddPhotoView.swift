@@ -12,6 +12,7 @@ struct RegBioAddPhotoView: View {
     @State private var showingSheet = false
     
     @State var showingImagePicker = false
+    @State var showingPhotoPicker = false
     @State var userImage: Image?
     
     var body: some View {
@@ -33,10 +34,9 @@ struct RegBioAddPhotoView: View {
             .actionSheet(isPresented: $showingSheet) {
                 ActionSheet(title: Text("Изменить фото профиля"), buttons: [
                     .default(Text("Сделать фото"), action: {
-                        print("Сделать фото")
+                        self.showingPhotoPicker.toggle()
                     }),
                     .default(Text("Выбрать из галлереи"), action: {
-                        print("Выбрать из галлереи")
                         self.showingImagePicker.toggle()
                     }),
                     .cancel()
@@ -45,7 +45,11 @@ struct RegBioAddPhotoView: View {
             Spacer()
         }
         .sheet(isPresented: $showingImagePicker, content: {
-            ImagePicker.shared.view
+            if self.showingImagePicker {
+                ImagePicker.shared.view(UIImagePickerController.SourceType.photoLibrary)
+            } else if self.showingPhotoPicker {
+                ImagePicker.shared.view(UIImagePickerController.SourceType.camera)
+            }
         }).onReceive(ImagePicker.shared.$image, perform: { image in
             self.userImage = image
         })

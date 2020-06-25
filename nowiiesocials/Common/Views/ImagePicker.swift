@@ -14,7 +14,9 @@ class ImagePicker: ObservableObject {
     
     private init() {}
     
-    let view = ImagePicker.View()
+    var view: (UIImagePickerController.SourceType) -> View = { arg in
+        return ImagePicker.View(sourceType: arg)
+    }
     let coordinator = ImagePicker.Coordinator()
     
     let willChange = PassthroughSubject<Image?, Never>()
@@ -48,12 +50,16 @@ extension ImagePicker {
 extension ImagePicker {
     struct View: UIViewControllerRepresentable {
         
+        var sourceType: UIImagePickerController.SourceType = .photoLibrary
+        
         func makeCoordinator() -> Coordinator {
             return ImagePicker.shared.coordinator
         }
         
         func makeUIViewController(context: Context) -> UIImagePickerController {
             let imagePickerController = UIImagePickerController()
+            imagePickerController.allowsEditing = false
+            imagePickerController.sourceType = sourceType
             imagePickerController.delegate = context.coordinator
             return imagePickerController
         }
