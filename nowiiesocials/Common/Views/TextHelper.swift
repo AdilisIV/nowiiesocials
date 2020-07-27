@@ -1,18 +1,17 @@
 //
-//  TextView.swift
-//  nowiiesocials
+//  TextHelper.swift
+//  My Favourite Recipes
 //
-//  Created by user on 11.06.2020.
-//  Copyright © 2020 Ski, LLC. All rights reserved.
+//  Created by Chris Barker on 27/12/2019.
+//  Copyright © 2019 Packt. All rights reserved.
 //
 
+import UIKit
 import SwiftUI
 
-struct TextView: UIViewRepresentable {
-
+struct TextViewRep: UIViewRepresentable {
     @Binding var text: String
     var placeholder: String
-    
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -31,11 +30,11 @@ struct TextView: UIViewRepresentable {
         uiView.text = text
     }
 
-    class Coordinator: NSObject, UITextViewDelegate {
+    class Coordinator : NSObject, UITextViewDelegate {
 
-        var parent: TextView
+        var parent: TextViewRep
 
-        init(_ uiTextView: TextView) {
+        init(_ uiTextView: TextViewRep) {
             self.parent = uiTextView
         }
 
@@ -46,11 +45,5 @@ struct TextView: UIViewRepresentable {
         func textViewDidChange(_ textView: UITextView) {
             self.parent.text = textView.text
         }
-    }
-}
-
-struct TextView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextView(text: .constant(""), placeholder: "Какой-то текст...")
     }
 }

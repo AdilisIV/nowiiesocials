@@ -22,11 +22,14 @@ struct BaitScoreView: View {
         HStack {
             ForEach((1...maxScore), id: \.self) { number in
                 self.starImage.foregroundColor(number > self.rating ? self.unactiveColor : self.activeColor)
+                .frame(width: 13, height: 13)
             }
             Text("\(baitText(for: self.rating))")
                 .foregroundColor(.black)
                 .font(Font.custom("NowieVremena-Light", size: 14))
                 .padding(EdgeInsets(top: 4, leading: 6, bottom: 0, trailing: 0))
+                .truncationMode(.tail)
+            .lineLimit(1)
         }
     }
     

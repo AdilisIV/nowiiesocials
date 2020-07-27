@@ -15,9 +15,14 @@ struct RegBioAddPhotoView: View {
     @State var showingPhotoPicker = false
     @State var userImage: Image?
     
+    var randomAvatarImage: Image {
+        let num = Int.random(in: 1...11)
+        return Image("user_avatar_\(num)")
+    }
+    
     var body: some View {
         HStack {
-            (userImage == nil ? Image("user_avatar_1") : userImage)!
+            (userImage == nil ? randomAvatarImage : userImage)!
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 78)
