@@ -18,10 +18,11 @@ struct World {
 }
 
 struct RegistrationState {
-    var model: User?
+    fileprivate(set) var model: User?
 }
 
 enum RegistrationAction {
+    case createUser(id: String)
     case setName(fullname: String)
     case setEmail(email: String)
     case setDateStatus(status: String)
@@ -32,6 +33,8 @@ enum RegistrationAction {
 
 func registrationReducer(state: inout RegistrationState, action: RegistrationAction, enviroment: World) -> AnyPublisher<RegistrationAction, Never> {
     switch action {
+    case .createUser(let id):
+        state.model = User(id: id)
     case .setName(let fullname):
         let names = fullname.split(separator: " ")
         state.model?.firstname = String(names[0])

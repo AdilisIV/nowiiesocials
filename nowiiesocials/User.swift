@@ -10,11 +10,11 @@ import Foundation
 
 struct User: Decodable, Identifiable {
     var id: String
-    var firstname: String
-    var lastname: String
-    var email: String
+    var firstname: String?
+    var lastname: String?
+    var email: String?
     var phone: String?
-    var request: String
-    var about: String
-    var dating_status: String
+    var request: String?
+    var about: String?
+    var dating_status: String?
 }

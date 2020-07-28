@@ -17,9 +17,13 @@ struct Background<Content: View>: View {
     }
     
     var body: some View {
-        Color.white
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .overlay(content)
+        Group {
+            content
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//        Color.white
+//            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//            .overlay(content)
     }
     
 }

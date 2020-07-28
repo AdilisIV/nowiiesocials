@@ -10,40 +10,48 @@ import SwiftUI
 
 struct AddNameInfoView: View {
     
-    @State var username: String = ""
+    @EnvironmentObject private var store: RegistrationStore
+    @State private var username: String = ""
+    @State private var isShowingNextView = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack() {
-                    Text("Как вас зовут?")
-                        .font(Font.custom("NowieVremena-Light", size: 20))
-                        .padding(EdgeInsets(top: 25, leading: 16, bottom: 0, trailing: 16))
-                    Spacer()
-                }
-                TextField("Имя", text: $username)
-                    .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 0))
-                    .font(Font.custom("NowieVremena-Light", size: 28))
+        VStack {
+            NavigationLink(destination: RegBioView(), isActive: $isShowingNextView) { EmptyView() }
+            HStack() {
+                Text("Немного о вас")
+                    .font(Font.custom("NowieVremena-Light", size: 34))
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    .lineSpacing(7)
                 Spacer()
             }
-            .navigationBarTitle(Text("Немного о вас"), displayMode: .large)
+            HStack() {
+                Text("Как вас зовут?")
+                    .font(Font.custom("NowieVremena-Light", size: 20))
+                    .padding(EdgeInsets(top: 25, leading: 16, bottom: 0, trailing: 16))
+                Spacer()
+            }
+            TextField("Имя", text: $username)
+                .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 0))
+                .font(Font.custom("NowieVremena-Light", size: 28))
+            Spacer()
         }
-        .onAppear(perform: customNavigationBar)
+        .navigationBarTitle(Text(" "), displayMode: .inline)
+        .navigationBarItems(trailing:
+            Group {
+                if username.count > 1 {
+                    Button(action: {
+                        UIApplication.shared.endEditing()
+                        self.isShowingNextView = true
+                    }) {
+                        Text("Done")
+                    }
+                }
+            }
+        )
     }
     
-    
-    func customNavigationBar() {
-        let customTab = UINavigationBarAppearance()
-        let navigationBar = UINavigationBar.appearance()
-        
-        customTab.backgroundColor = .white
-        customTab.shadowImage = UIImage()
-        customTab.shadowColor = .clear
-        
-        customTab.largeTitleTextAttributes = [.font : UIFont(name: "NowieVremena-Light", size: 34)!]
-        navigationBar.standardAppearance = customTab
-        navigationBar.scrollEdgeAppearance = customTab
-        navigationBar.compactAppearance = customTab
+    func validateTextField(string: String) -> Bool {
+        return true
     }
 }
 

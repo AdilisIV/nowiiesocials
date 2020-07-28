@@ -21,4 +21,9 @@ final class AuthViewViewModel: ObservableObject {
         print("sendAuthRequest")
     }
     
+    func signInWithApple(completion: @escaping (String) -> Void ) {
+        print("signInWithApple")
+        completion(UUID().uuidString)
+    }
+    
 }

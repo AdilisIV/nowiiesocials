@@ -181,7 +181,6 @@
 			children = (
 				CED6D6BE248CDFE700B681E2 /* BioInfo */,
 				CE48DD5E247F81D500827388 /* DatingStatus */,
-				CED07393247F6C62008DA129 /* AddEmailInfo */,
 				CE06EF0024715767008C1704 /* AddNameInfo */,
 				CE06EEFE24714DBC008C1704 /* Auth */,
 			);
@@ -332,6 +331,7 @@
 				CE5C391124CC80320001170B /* RegistrationTour */,
 				CE65138423711D5600E06F87 /* AppDelegate.swift */,
 				CE65138623711D5600E06F87 /* SceneDelegate.swift */,
+				CED07393247F6C62008DA129 /* AddEmailInfo */,
 				CE65138B23711D5600E06F87 /* ContentView.swift */,
 				CE65138D23711D5900E06F87 /* Assets.xcassets */,
 				CE65139223711D5900E06F87 /* LaunchScreen.storyboard */,
