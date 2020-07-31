@@ -22,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let contentView = AuthView(viewModel: AuthViewViewModel()).environmentObject(registrationStore)
+//        let contentView = AuthView(viewModel: AuthViewViewModel()).environmentObject(registrationStore)
 //        let contentView = RegBioView()
+        let contentView = DatingStatusView().environmentObject(registrationStore)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

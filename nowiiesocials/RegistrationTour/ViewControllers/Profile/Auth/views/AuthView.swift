@@ -16,7 +16,7 @@ struct AuthView: View {
     
     var body: some View {
             VStack {
-                NavigationLink(destination: AddNameInfoView(), tag: "navigate_AddName", selection: $selection) { EmptyView() }
+                NavigationLink(destination: AddNameInfoView().environmentObject(store), tag: "navigate_AddName", selection: $selection) { EmptyView() }
                 VStack {
                     Spacer()
                         .frame(height: 52)

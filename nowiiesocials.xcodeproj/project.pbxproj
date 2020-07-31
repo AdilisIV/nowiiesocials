@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE06EF0224715791008C1704 /* AddNameInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06EF0124715791008C1704 /* AddNameInfoView.swift */; };
+		CE14721C24D144EA007FBCAB /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14721B24D144EA007FBCAB /* EmailValidator.swift */; };
 		CE1E21D72468747C005ADFE6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E21D62468747C005ADFE6 /* PageViewController.swift */; };
 		CE1E21D924687E21005ADFE6 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E21D824687E21005ADFE6 /* PageView.swift */; };
 		CE28FF882486711C0043E297 /* DatingStatusPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28FF872486711C0043E297 /* DatingStatusPageView.swift */; };
@@ -16,6 +17,7 @@
 		CE33975424CEA9A100D758A8 /* UIApplication+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33975324CEA9A100D758A8 /* UIApplication+actions.swift */; };
 		CE33975624CEAB4000D758A8 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33975524CEAB4000D758A8 /* Background.swift */; };
 		CE33975824CEBB2E00D758A8 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33975724CEBB2E00D758A8 /* CustomNavigationBar.swift */; };
+		CE33DB7924D15C5D00640153 /* AddAgeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33DB7824D15C5D00640153 /* AddAgeInfoView.swift */; };
 		CE3565A22469372B00A6C126 /* AuthFeatureNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3565A12469372B00A6C126 /* AuthFeatureNote.swift */; };
 		CE3565A42469AFA200A6C126 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3565A32469AFA200A6C126 /* PageControl.swift */; };
 		CE3D1AB424CDE9DF008FA412 /* Publishers+keyboardHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D1AB324CDE9DF008FA412 /* Publishers+keyboardHeight.swift */; };
@@ -73,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		CE06EF0124715791008C1704 /* AddNameInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddNameInfoView.swift; path = nowiiesocials/RegistrationTour/ViewControllers/Profile/AddNameInfo/AddNameInfoView.swift; sourceTree = SOURCE_ROOT; };
+		CE14721B24D144EA007FBCAB /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		CE1E21D62468747C005ADFE6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = nowiiesocials/Common/Views/PageViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE1E21D824687E21005ADFE6 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		CE28FF872486711C0043E297 /* DatingStatusPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatingStatusPageView.swift; path = nowiiesocials/RegistrationTour/ViewControllers/Profile/DatingStatus/views/DatingStatusPageView.swift; sourceTree = SOURCE_ROOT; };
@@ -81,6 +84,7 @@
 		CE33975324CEA9A100D758A8 /* UIApplication+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+actions.swift"; sourceTree = "<group>"; };
 		CE33975524CEAB4000D758A8 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Background.swift; path = nowiiesocials/Background.swift; sourceTree = SOURCE_ROOT; };
 		CE33975724CEBB2E00D758A8 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		CE33DB7824D15C5D00640153 /* AddAgeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddAgeInfoView.swift; path = nowiiesocials/RegistrationTour/ViewControllers/AddAgeInfoView.swift; sourceTree = SOURCE_ROOT; };
 		CE3565A12469372B00A6C126 /* AuthFeatureNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFeatureNote.swift; sourceTree = "<group>"; };
 		CE3565A32469AFA200A6C126 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		CE3D1AB324CDE9DF008FA412 /* Publishers+keyboardHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Publishers+keyboardHeight.swift"; path = "nowiiesocials/Publishers+keyboardHeight.swift"; sourceTree = SOURCE_ROOT; };
@@ -182,6 +186,8 @@
 				CED6D6BE248CDFE700B681E2 /* BioInfo */,
 				CE48DD5E247F81D500827388 /* DatingStatus */,
 				CE06EF0024715767008C1704 /* AddNameInfo */,
+				CED07393247F6C62008DA129 /* AddEmailInfo */,
+				CE33DB7724D15C2400640153 /* AddAgeInfo */,
 				CE06EEFE24714DBC008C1704 /* Auth */,
 			);
 			path = Profile;
@@ -229,6 +235,14 @@
 				CE4678262492A8F900B44AC6 /* GrowingTextView.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		CE33DB7724D15C2400640153 /* AddAgeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE33DB7824D15C5D00640153 /* AddAgeInfoView.swift */,
+			);
+			path = AddAgeInfo;
 			sourceTree = "<group>";
 		};
 		CE3D1AB524CDF7C8008FA412 /* ViewModifiers */ = {
@@ -331,7 +345,6 @@
 				CE5C391124CC80320001170B /* RegistrationTour */,
 				CE65138423711D5600E06F87 /* AppDelegate.swift */,
 				CE65138623711D5600E06F87 /* SceneDelegate.swift */,
-				CED07393247F6C62008DA129 /* AddEmailInfo */,
 				CE65138B23711D5600E06F87 /* ContentView.swift */,
 				CE65138D23711D5900E06F87 /* Assets.xcassets */,
 				CE65139223711D5900E06F87 /* LaunchScreen.storyboard */,
@@ -371,6 +384,7 @@
 		CE8FF276249C6C5700F021AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE14721B24D144EA007FBCAB /* EmailValidator.swift */,
 				CE8FF277249C6C8C00F021AD /* PhotoLibraryCameraService.swift */,
 			);
 			path = Services;
@@ -580,6 +594,7 @@
 				CE28FF8B248671530043E297 /* TextConstraints.swift in Sources */,
 				CE65138A23711D5600E06F87 /* nowiiesocials.xcdatamodeld in Sources */,
 				CE06EF0224715791008C1704 /* AddNameInfoView.swift in Sources */,
+				CE14721C24D144EA007FBCAB /* EmailValidator.swift in Sources */,
 				CEF682042491DD4900762EA9 /* TextView.swift in Sources */,
 				CE48DD63247FA43F00827388 /* DigitsPageControl.swift in Sources */,
 				CE4678272492A8F900B44AC6 /* GrowingTextView.swift in Sources */,
@@ -587,6 +602,7 @@
 				CE3D1AB424CDE9DF008FA412 /* Publishers+keyboardHeight.swift in Sources */,
 				CE5C390F24CC6C480001170B /* Store.swift in Sources */,
 				CEE5D9C724684FE80019E2A1 /* AuthViewViewModel.swift in Sources */,
+				CE33DB7924D15C5D00640153 /* AddAgeInfoView.swift in Sources */,
 				CE48DD5D247F7E0400827388 /* AddEmailInfoView.swift in Sources */,
 				CE28FF882486711C0043E297 /* DatingStatusPageView.swift in Sources */,
 				CE33975624CEAB4000D758A8 /* Background.swift in Sources */,

@@ -24,6 +24,7 @@ struct RegistrationState {
 enum RegistrationAction {
     case createUser(id: String)
     case setName(fullname: String)
+    case setAge(age: String)
     case setEmail(email: String)
     case setDateStatus(status: String)
     case setAbout(info: String)
@@ -39,6 +40,8 @@ func registrationReducer(state: inout RegistrationState, action: RegistrationAct
         let names = fullname.split(separator: " ")
         state.model?.firstname = String(names[0])
         state.model?.lastname = String(names[1])
+    case .setAge(let age):
+        state.model?.age = age
     case .setEmail(let email):
         state.model?.email = email
     case .setDateStatus(let status):

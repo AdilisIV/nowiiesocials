@@ -1,5 +1,5 @@
 //
-//  AddNameInfoView.swift
+//  AddEmailInfoView.swift
 //  nowiiesocials
 //
 //  Created by user on 17.05.2020.
@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-struct AddNameInfoView: View {
+struct AddEmailInfoView: View {
     
     @EnvironmentObject private var store: RegistrationStore
-    @State private var username: String = ""
     @State private var isShowingNextView = false
+    @State var userEmail: String = ""
     
     var body: some View {
         VStack {
-            NavigationLink(destination: AddAgeInfoView().environmentObject(store), isActive: $isShowingNextView) { EmptyView() }
+            NavigationLink(destination: DatingStatusView().environmentObject(store), isActive: $isShowingNextView) { EmptyView() }
             HStack() {
                 Text("Немного о вас")
                     .font(Font.custom("NowieVremena-Light", size: 34))
@@ -25,15 +25,16 @@ struct AddNameInfoView: View {
                 Spacer()
             }
             HStack() {
-                Text("Как вас зовут?")
+                Text("На какой email прислать инвайт-код?")
                     .font(Font.custom("NowieVremena-Light", size: 20))
                     .padding(EdgeInsets(top: 25, leading: 16, bottom: 0, trailing: 16))
                 Spacer()
             }
-            TextField("Имя", text: $username)
+            TextField("email", text: $userEmail)
                 .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 0))
                 .font(Font.custom("NowieVremena-Light", size: 28))
-                .textContentType(.givenName)
+                .keyboardType(.emailAddress)
+                .textContentType(.emailAddress)
             Spacer()
         }
         .navigationBarTitle(Text(" "), displayMode: .inline)
@@ -41,23 +42,21 @@ struct AddNameInfoView: View {
             Button(action: {
                 UIApplication.shared.endEditing()
                 self.isShowingNextView = true
-                self.store.send(.setName(fullname: self.username))
+                self.store.send(.setEmail(email: self.userEmail))
             }) {
                 Text("Done")
             }
-            .disabled(!(username.count > 2))
+            .disabled(!EmailValidation.isValid(userEmail))
+            .animation(.default)
         )
     }
     
-    func validateTextField(string: String) -> Bool {
-        return true
-    }
 }
 
-struct AddNameInfoView_Previews: PreviewProvider {
+struct AddEmailInfoView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AddNameInfoView()
+            AddEmailInfoView()
         }
     }
 }

@@ -12,6 +12,7 @@ struct User: Decodable, Identifiable {
     var id: String
     var firstname: String?
     var lastname: String?
+    var age: String?
     var email: String?
     var phone: String?
     var request: String?
